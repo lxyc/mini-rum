@@ -1,0 +1,11 @@
+{
+  "name": "mini-rum",
+  "version": "0.0.1",
+  "description": "tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "xyc",
+  "license": "ISC"
+}
