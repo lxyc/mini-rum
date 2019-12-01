@@ -1,18 +1,18 @@
 import { shallowMount } from "@vue/test-utils";
-import MlButton from "./button.vue";
+import MrButton from "./button.vue";
 
 describe("Button", () => {
   test("is a Vue instance", () => {
-    const wrapper = shallowMount(MlButton);
+    const wrapper = shallowMount(MrButton);
     expect(wrapper.isVueInstance()).toBeTruthy();
   });
 
   test("positive color", () => {
-    const wrapper = shallowMount(MlButton, {
+    const wrapper = shallowMount(MrButton, {
       propsData: {
         type: "positive"
       }
     });
-    expect(wrapper.classes("ml-button--positive")).toBeTruthy();
+    expect(wrapper.classes("mr-button--positive")).toBeTruthy();
   });
 });

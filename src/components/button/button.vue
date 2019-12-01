@@ -1,13 +1,13 @@
 <template>
-  <button class="ml-button" :class="btnClass">
+  <button class="mr-button" :class="btnClass">
     <slot></slot>
   </button>
 </template>
 
 <script>
-const prefix = "ml-button";
+const prefix = "mr-button";
 export default {
-  name: "MlButton",
+  name: "MrButton",
   props: {
     type: {
       type: String,
@@ -35,9 +35,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../../styles/variables/color.scss";
-
-.ml-button {
+@import "../../styles/variables/index";
+.mr-button {
   color: white;
   font-size: 14px;
   padding: 12px 20px;

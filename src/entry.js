@@ -1,2 +1,1 @@
-// 集体导出
-export { default as MlButton } from "./components/button";
+export { default as MrButton } from "./components/button";

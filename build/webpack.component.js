@@ -2,15 +2,32 @@ const path = require("path");
 const merge = require("webpack-merge");
 const webpackBaseConfig = require("./webpack.base.js");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const glob = require("glob");
+
+const entry = Object.assign(
+  {},
+  {
+    base: path.resolve(__dirname, "../src/styles/index.scss")
+  },
+  glob
+    .sync("./src/components/**/index.js")
+    .map(item => {
+      return item.split("/")[3];
+    })
+    .reduce((acc, cur) => {
+      acc[`mr-${cur}`] = path.resolve(
+        __dirname,
+        `../src/components/${cur}/index.js`
+      );
+      return { ...acc };
+    }, {})
+);
 
 module.exports = merge(webpackBaseConfig, {
-  entry: {
-    main: path.resolve(__dirname, "../src/index")
-  },
+  entry: entry,
   output: {
     path: path.resolve(__dirname, "../lib"),
-    filename: "vue-mini-rum.js",
-    library: "vue-nimi-rum",
+    filename: "[name]/index.js",
     libraryTarget: "umd"
   },
   module: {
@@ -28,7 +45,7 @@ module.exports = merge(webpackBaseConfig, {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "index.css"
+      filename: "theme/[name].css"
     })
   ]
 });

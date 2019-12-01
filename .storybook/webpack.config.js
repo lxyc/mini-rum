@@ -6,7 +6,11 @@ module.exports = async ({ config, mode }) => {
     use: ["vue-style-loader", "css-loader", "sass-loader"],
     include: path.resolve(__dirname, "../")
   });
-
+  config.module.rules.push({
+    test: /\.story\.js?$/,
+    loaders: [require.resolve("@storybook/source-loader")],
+    enforce: "pre"
+  });
   // Return the altered config
   return config;
 };

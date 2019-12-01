@@ -1,16 +1,15 @@
 import { storiesOf } from "@storybook/vue";
-import MlButton from "./button.vue";
+import MrButton from "./button.vue";
 import markdown from "./button.md";
 storiesOf("Button", module).add(
   "Primary",
   () => ({
-    components: { MlButton },
-    template: `
-    <div>
-      <ml-button type="primary">Primary</ml-button>
-      <ml-button disabled>Disabled</ml-button>
-      <ml-button round>Round</ml-button>
-    </div>`
+    components: { MrButton },
+    template: `<div>
+<mr-button type="primary">Primary</mr-button>
+<mr-button disabled>Disabled</mr-button>
+<mr-button round>Round</mr-button>
+</div>`
   }),
   {
     notes: { markdown: markdown }

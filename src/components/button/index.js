@@ -1,2 +1,2 @@
-import MlButton from "./button.vue";
-export default MlButton;
+import MrButton from "./button.vue";
+export default MrButton;

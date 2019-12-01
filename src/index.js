@@ -1,7 +1,3 @@
-/**
- * @description: entry for build
- */
-
 import "./styles/index.scss";
 import * as components from "./entry";
 

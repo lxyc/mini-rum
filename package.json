@@ -1,16 +1,25 @@
 {
-  "name": "mini-rum",
-  "version": "0.0.1",
-  "description": "vue commponets used in project",
-  "main": "mian.js",
+  "name": "vue-uikit-boilerplate",
+  "version": "1.0.0",
+  "description": "Vue UI Kit boilerplate",
+  "author": "Jay Gao",
+  "main": "lib/vue-uikit-boilerplate.js",
+  "license": "MIT",
   "scripts": {
+    "test": "jest",
+    "lint": "pretty-quick --staged && eslint --ext .js,.vue src",
     "dev": "start-storybook",
     "build:storybook": "build-storybook -c .storybook -o dist",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rimraf lib && yarn build:web && yarn build:com && rimraf lib/base",
+    "build:web": "webpack --mode production --config build/webpack.config.js",
+    "build:com": "webpack --mode production --config build/webpack.component.js",
+    "publish": "yarn build && npm publish"
   },
-  "author": "xyc,appleguardu",
-  "license": "MIT",
-  "repository": "https://github.com/lxyc/mini-rum.git",
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
@@ -50,21 +59,5 @@
     "webpack": "^4.32.2",
     "webpack-cli": "^3.3.2",
     "webpack-merge": "^4.2.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged && eslint --ext .js,.vue src"
-    }
-  },
-  "eslintConfig": {
-    "env": {
-      "node": true
-    },
-    "extends": [
-      "eslint:recommended",
-      "plugin:jest/recommended",
-      "plugin:vue/recommended",
-      "plugin:prettier/recommended"
-    ]
   }
 }
