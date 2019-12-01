@@ -1,9 +1,9 @@
 {
-  "name": "vue-uikit-boilerplate",
-  "version": "1.0.0",
-  "description": "Vue UI Kit boilerplate",
-  "author": "Jay Gao",
-  "main": "lib/vue-uikit-boilerplate.js",
+  "name": "vue-mini-rum",
+  "version": "1.0.1",
+  "description": "Vue Mini Rum",
+  "author": "lxyc,appleguardu",
+  "main": "lib/vue-mini-rum.js",
   "license": "MIT",
   "scripts": {
     "test": "jest",
