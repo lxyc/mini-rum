@@ -1,11 +1,70 @@
 {
   "name": "mini-rum",
   "version": "0.0.1",
-  "description": "tools",
-  "main": "index.js",
+  "description": "vue commponets used in project",
+  "main": "mian.js",
   "scripts": {
+    "dev": "start-storybook",
+    "build:storybook": "build-storybook -c .storybook -o dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "xyc",
-  "license": "ISC"
+  "author": "xyc,appleguardu",
+  "license": "MIT",
+  "repository": "https://github.com/lxyc/mini-rum.git",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@storybook/addon-notes": "^5.0.11",
+    "@storybook/addon-storysource": "^5.0.11",
+    "@storybook/addon-viewport": "^5.0.11",
+    "@storybook/vue": "^5.0.11",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "autoprefixer": "^9.5.1",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
+    "css-loader": "^2.1.1",
+    "cssnano": "^4.1.10",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.3.0",
+    "eslint-plugin-jest": "^22.6.4",
+    "eslint-plugin-vue": "^5.2.2",
+    "glob": "^7.1.4",
+    "husky": "^2.3.0",
+    "jest": "^24.8.0",
+    "jest-serializer-vue": "^2.0.2",
+    "mini-css-extract-plugin": "^0.6.0",
+    "node-sass": "^4.12.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "prettier": "^1.17.1",
+    "pretty-quick": "^1.11.0",
+    "rimraf": "^2.6.3",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "vue": "^2.6.10",
+    "vue-jest": "^3.0.4",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10",
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-merge": "^4.2.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && eslint --ext .js,.vue src"
+    }
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "eslint:recommended",
+      "plugin:jest/recommended",
+      "plugin:vue/recommended",
+      "plugin:prettier/recommended"
+    ]
+  }
 }
